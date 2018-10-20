@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH -J                %(jobname)s
+#SBATCH -p                %(queue)s
+#SBATCH -o                job.%%j.out
+#SBATCH -N                %(nodes)d
+#SBATCH --ntasks-per-node %(ppn)d
+#SBATCH -t                00:00:%(walltime)d
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=siddhant.wahal@gmail.com 
+
+%(preproc)s
+
+export LOGFILE=%(jobname)s.${SLURM_JOB_ID}.log
+
+%(executable)s
+
+%(postproc)s
