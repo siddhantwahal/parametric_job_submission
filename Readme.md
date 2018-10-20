@@ -1,1 +1,1 @@
-Helper function to create and submit parametric SLURM job scripts
+Helper function to create and submit parametric Slurm job scripts
